@@ -1,0 +1,436 @@
+::selection {
+    background: rgba(236, 0, 0, 0.1);
+}
+
+::-moz-selection {
+    background: rgba(0, 0, 0, .1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    /* this is the checkered background */
+    background: url(./1.jpg);
+
+}
+
+.wrapper {
+    width: 640px;
+    height: 1136px;
+    background: #2d3034;
+    background: linear-gradient(#2d3034 0%,
+            #212527 100%);
+
+    position: absolute;
+    left: 50%;
+    margin: 15px -320px;
+    padding-top: 50px;
+    box-shadow: 0 0 25px #000;
+}
+
+.clock {
+    width: 550px;
+    height: 295px;
+    background: #191b1d;
+    background: linear-gradient(#191b1d 0%,
+            #212527 100%);
+
+    position: relative;
+    margin: 0 auto;
+
+    border-radius: 15px;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, .1);
+}
+
+.flipper {
+    width: 250px;
+    height: 250px;
+    background: #212527;
+    background: linear-gradient(#1b1d1f 0%,
+            #242629 50%,
+            #212527 100%);
+
+    position: absolute;
+    left: 15px;
+    top: 15px;
+
+    font-size: 192px;
+    color: white;
+    text-align: center;
+    line-height: 240px;
+
+    border-radius: 5px;
+    box-shadow: inset 0 1px rgba(255, 255, 255, .1),
+        /* Top shine */
+        0 6px 5px -5px rgba(0, 0, 0, .5),
+        /* Shadow 1 */
+        0 7px 0 -2px rgba(30, 30, 30, 1),
+        /* Flip 1 */
+        0 11px 5px -5px rgba(0, 0, 0, .5),
+        /* Shadow 2 */
+        0 13px 0 -4px rgba(30, 30, 30, .7),
+        /* Flip 2 */
+        0 16px 5px -5px rgba(0, 0, 0, .5),
+        /* Shadow 3 */
+        0 20px 0 -8px rgba(30, 30, 30, .5),
+        /* Flip 3 */
+        0 15px 0 5px #000,
+        /* Black border */
+        0 0 0 5px #000;
+    /* Black border */
+}
+
+.flipper:nth-child(2) {
+    right: 15px;
+    left: auto;
+    font-size: 128px;
+}
+
+.flipper:before,
+.flipper:after {
+    content: "";
+    width: 5px;
+    height: 40px;
+    background: rgb(30, 30, 30);
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -20px;
+
+    box-shadow: inset 0 -1px rgba(60, 60, 60, .4),
+        /* Ridge 1 */
+        inset 0 -3px rgb(25, 25, 25),
+        /* Gradient 1 */
+        inset 0 -4px rgba(60, 60, 60, .5),
+        /* Ridge 2 */
+        inset 0 -6px rgb(30, 30, 30),
+        inset 0 -7px rgba(60, 60, 60, .6),
+        /* Ridge 3 */
+        inset 0 -9px rgb(35, 35, 35),
+        inset 0 -10px rgba(60, 60, 60, .7),
+        /* Ridge 4 */
+        inset 0 -12px rgb(40, 40, 40),
+        inset 0 -13px rgba(60, 60, 60, .8),
+        /* Ridge 5 */
+        inset 0 -15px rgb(45, 45, 45),
+        inset 0 -16px rgba(60, 60, 60, .9),
+        /* Ridge 6 */
+        inset 0 -18px rgb(50, 50, 50),
+        inset 0 -19px rgba(60, 60, 60, 1),
+        /* Ridge 7 */
+        inset 0 -21px rgb(50, 50, 50),
+        inset 0 -22px rgba(60, 60, 60, 1),
+        /* Ridge 8 */
+        inset 0 -24px rgb(50, 50, 50),
+        inset 0 -25px rgba(60, 60, 60, .9),
+        /* Ridge 9 */
+        inset 0 -27px rgb(45, 45, 45),
+        inset 0 -28px rgba(60, 60, 60, .8),
+        /* Ridge 10 */
+        inset 0 -30px rgb(40, 40, 40),
+        inset 0 -31px rgba(60, 60, 60, .7),
+        /* Ridge 11 */
+        inset 0 -33px rgb(35, 35, 35),
+        inset 0 -34px rgba(60, 60, 60, .6),
+        /* Ridge 12 */
+        inset 0 -36px rgb(30, 30, 30),
+        inset 0 -37px rgba(60, 60, 60, .5),
+        /* Ridge 13 */
+        inset 0 -39px rgb(25, 25, 25),
+        0 0 0 2px #000;
+    z-index: 1;
+}
+
+.flipper:after {
+    right: 0;
+    left: auto;
+}
+
+.flipper span:before {
+    content: "";
+    width: 236px;
+    height: 5px;
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    margin-top: -3px;
+    background: #000;
+
+    box-shadow: 0 0 0 1px #3b3e41;
+}
+
+
+
+.toggles {
+    width: 484px;
+    height: 180px;
+
+    margin: 64px auto 32px;
+}
+
+.toggle {
+    width: 80px;
+    height: 80px;
+    background: #212325;
+
+    display: inline-block;
+    position: relative;
+    margin: 13px 25px;
+
+    font-size: 64px;
+    color: #787b7e;
+    text-align: center;
+
+    border-radius: 50%;
+    box-shadow: 0 -5px 5px rgba(255, 255, 255, .15),
+        /* Highlight */
+        0 0 0 5px #1c1e1f,
+        /* Inner shadow */
+        0 0 0 8px #000,
+        /* Hole */
+        0 20px 20px 5px rgba(0, 0, 0, .5),
+        /* Shadow */
+        0 5px 5px 8px rgba(40, 45, 47, 1),
+        /* Border highlight */
+        0 0 0 13px #1a1c1e,
+        /* Border */
+        0 1px 1px 12px rgba(255, 255, 255, .5);
+    /* Sharp highlight */
+}
+
+.toggle:first-child {
+    margin-left: 0;
+}
+
+.toggle:last-child {
+    margin-right: 0;
+}
+
+.toggle.on {
+    box-shadow: 0 -5px 20px rgba(255, 255, 255, .1),
+        /* Highlight */
+        0 0 0 5px #1c1e1f,
+        /* Inner shadow */
+        0 0 0 8px #000,
+        /* Hole */
+        0 5px 5px 8px rgba(40, 45, 47, 1),
+        /* Border highlight */
+        0 0 0 13px #1a1c1e,
+        /* Border */
+        0 1px 1px 12px rgba(255, 255, 255, .5);
+    /* Sharp highlight */
+}
+
+.toggle:after {
+    content: "";
+    height: 10px;
+    width: 10px;
+    background: #878787;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -5px;
+
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px #27292b,
+        /* Border */
+        0 1px 1px rgba(255, 255, 255, .5),
+        /* Highlight */
+        0 23px 45px #fff,
+        /* Button highlight */
+        14px 18px 45px #fff,
+        /* Button highlight */
+        -14px 18px 45px #fff,
+        /* Button highlight */
+        0 23px 30px rgba(255, 255, 255, .5);
+    /* Button highlight */
+}
+
+.toggle.on:after {
+    background: #fce3af;
+
+    box-shadow: 0 1px 1px rgba(255, 255, 255, .5),
+        /* Highlight */
+        0 0 1px 1px #bb6119,
+        /* Border */
+        0 0 15px #ffc000,
+        /* Glow */
+        0 23px 45px #ffe6d2,
+        /* Button highlight */
+        14px 18px 45px #ffe6d2,
+        /* Button highlight */
+        -14px 18px 45px #ffe6d2;
+    /* Button highlight */
+}
+
+.toggle span {
+    display: block;
+    margin-top: -92px;
+}
+
+
+
+.graph {
+    width: 540px;
+    height: 390px;
+    background: #181818;
+
+    position: relative;
+    margin: 0 auto;
+
+    color: #e19646;
+    text-shadow: 0 0 10px rgba(225, 150, 70, .5);
+    font-size: 32px;
+
+    border-radius: 7px;
+    box-shadow:
+        inset 0 1px 2px 1px rgba(255, 255, 255, .1),
+        /* Shine */
+        inset 0 -4px 2px -3px rgba(255, 255, 255, .1),
+        /* Bot. shine */
+        0 -1px 6px 4px #1b1d1f,
+        /* Blurred border */
+        2px 2px 0 5px #1b1d1f,
+        /* Border right */
+        -2px 2px 0 5px #1b1d1f,
+        /* Border left */
+        0 0 0 7px #141516,
+        /* Border shadow */
+        0 1px 0 7px rgba(255, 255, 255, .1);
+    overflow: hidden;
+}
+
+.graph:after {
+    content: "";
+    width: 400px;
+    height: 600px;
+
+    position: absolute;
+    left: -150px;
+    top: -125px;
+
+    background: rgba(255, 255, 255, .2);
+    background: linear-gradient(-25deg,
+            rgba(255, 255, 255, 0) 25%,
+            rgba(255, 255, 255, .1) 100%);
+
+    -webkit-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    transform: rotate(25deg);
+}
+
+.graph h1 {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #27292d;
+    font-weight: 100;
+}
+
+.days {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.days span {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 900;
+
+    margin-left: 50px;
+
+    position: relative;
+}
+
+.days span:first-child {
+    margin: 0;
+}
+
+.days span:before {
+    content: attr(data-icon);
+
+    font-family: 'Artill_Weather';
+    font-size: 64px;
+    font-weight: 100;
+    speak-as: none;
+    -webkit-font-smoothing: antialiased;
+
+    position: absolute;
+    left: -16px;
+    top: 32px;
+}
+
+.days span:after {
+    content: attr(data-degrees);
+    font-size: 32px;
+    font-weight: 100;
+
+    position: absolute;
+    left: -16px;
+    top: 128px;
+}
+
+.days span[data-icon="1"]:before,
+.days span[data-icon="2"]:before {
+    top: 40px;
+}
+
+.days span[data-icon="7"]:before {
+    top: 36px;
+}
+
+.days span:last-child:before {
+    left: -10px;
+}
+
+
+
+nav {
+    height: 80px;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+
+    box-shadow: 0 -1px rgba(255, 255, 255, .1),
+        0 -5px #181818;
+}
+
+nav button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 118px;
+    height: 59px;
+    background: #212121;
+
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin: 0 -60px;
+
+    color: #81888b;
+    font-size: 48px;
+    line-height: 64px;
+
+    cursor: pointer;
+    border: 1px solid #000;
+    border-bottom: none;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    box-shadow: inset 0 25px 25px rgba(0, 0, 0, .1);
+}
+
+.icon {
+    font-family: 'Artill_Weather';
+    speak-as: none;
+    -webkit-font-smoothing: antialiased;
+}
